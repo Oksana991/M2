@@ -48,7 +48,7 @@ namespace Mas
                 empl[i] = new Empls(n, a, s, d);
                 //   когда нажать Y, ввод массива закончится
                 Console.Write("if you want to end the array press Y if no press N");
-                if (Console.ReadLine() == "Y") ; break;
+                if (Console.ReadLine() == "Y")  break;
                 // if   (Console.ReadLine() == "Y");
                 //{ continue; }
 
@@ -60,7 +60,7 @@ namespace Mas
 
             }
 
-            Console.WriteLine("select an action: a = Min salary of employees; b = Max salary of employees; c = AVR age of employees; d = Vivod spiska, e= ");
+            Console.WriteLine("select an action: a = Min salary of employees; \n b = Max salary of employees;\n c = AVR age of employees; \n d = Output to the console of all employees, e= ");
                 string selection = Console.ReadLine();
 
 
