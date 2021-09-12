@@ -20,7 +20,7 @@ namespace Mas
             name = n; age = a; salary = s; dep = d;
         }
 
-        public void DisplayInfo()
+                public void DisplayInfo()
         {
             Console.WriteLine($"Name: {name}  Age: {age} Salary = {salary} Departmrnt {dep} ");
         }
@@ -28,13 +28,36 @@ namespace Mas
     }
     class Program
     {
+
+
+        public static class Extensions
+        {
+            public static T[] Append<T>(this T[] array, T item)
+            {
+                if (array == null)
+                {
+                    return new T[] { item };
+                }
+
+                T[] result = new T[array.Length + 1];
+                for (int i = 0; i < array.Length; i++)
+                {
+                    result[i] = array[i];
+                }
+
+                result[array.Length] = item;
+                return result;
+            }
+        }
+
+
+
         public static void Main(string[] args)
         {
 
             int size = 1;
             Empls[] empl = new Empls[size];
-
-
+           
             for (int i = 0; i < empl.Length; i++)
 
             {
@@ -47,20 +70,37 @@ namespace Mas
                 Console.WriteLine("Enter department: ");
                 string d = Console.ReadLine();
                 empl[i] = new Empls(n, a, s, d);
-                int count = empl.Length;
-                if (count != 0)
-                {
-                    Array.Resize(ref empl, empl.Length + 1);
-                }//   когда нажать Y, ввод массива закончится
+
+                int[] result = empl.Append(item);
+
+                // newarr[] = new Empls [empl.Length + 1];
+
+                // for (i = 0; i < empl.Length + 1; i++)
+                //  {
+                //     newarr[i] = empl[i];
+
+                //  }
+
+              //  int count = empl.Length;
+              //  if (count != 0)
+               //  {
+                 //  Array.Resize(ref empl, empl.Length + 1);
+                 //}
+
+
+
+
+              //  int count = empl.Length;
+                //if (count != 0)
+               // {
+               //    newempl[]  = new Empls[empl.Length + 1];
+               // }
+
                 Console.Write("if you want to end the array press Y if no press N\n");
                 if (Console.ReadLine() == "Y") break;
 
 
-                // if (count)
-                //  {
-                //      empl = CopyEmployL
-                // }
-
+               
 
             }
             metka:
